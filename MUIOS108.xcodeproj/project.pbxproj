@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		507DE53318BE717500CA426D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 507DE53218BE717500CA426D /* User.m */; };
+		507DE53618C3B15700CA426D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507DE53518C3B15700CA426D /* RegisterViewController.m */; };
 		5094B88418B7C42D0023B8B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88318B7C42D0023B8B5 /* Foundation.framework */; };
 		5094B88618B7C42D0023B8B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88518B7C42D0023B8B5 /* CoreGraphics.framework */; };
 		5094B88818B7C42D0023B8B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88718B7C42D0023B8B5 /* UIKit.framework */; };
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		507DE53118BE717500CA426D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		507DE53218BE717500CA426D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		507DE53418C3B15700CA426D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		507DE53518C3B15700CA426D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		5094B88018B7C42D0023B8B5 /* MUIOS108.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUIOS108.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094B88318B7C42D0023B8B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5094B88518B7C42D0023B8B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +151,10 @@
 				5094B8FB18B7CE470023B8B5 /* MainViewController.h */,
 				5094B8FC18B7CE470023B8B5 /* MainViewController.m */,
 				5094B8FE18B7CEB90023B8B5 /* Main.storyboard */,
+				507DE53118BE717500CA426D /* User.h */,
+				507DE53218BE717500CA426D /* User.m */,
+				507DE53418C3B15700CA426D /* RegisterViewController.h */,
+				507DE53518C3B15700CA426D /* RegisterViewController.m */,
 			);
 			path = MUIOS108;
 			sourceTree = "<group>";
@@ -297,6 +307,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507DE53618C3B15700CA426D /* RegisterViewController.m in Sources */,
+				507DE53318BE717500CA426D /* User.m in Sources */,
 				5094B89418B7C42D0023B8B5 /* AppDelegate.m in Sources */,
 				5094B8FD18B7CE470023B8B5 /* MainViewController.m in Sources */,
 				5094B89018B7C42D0023B8B5 /* main.m in Sources */,

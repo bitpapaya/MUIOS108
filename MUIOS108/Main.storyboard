@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dkq-TS-mMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eQU-dT-853">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -65,13 +65,137 @@
                             </label>
                         </subviews>
                     </view>
+                    <navigationItem key="navigationItem" id="CDP-6t-FCq"/>
                     <connections>
                         <outlet property="currentIndexLabel" destination="COM-TI-8x2" id="fFa-X5-OFl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWi-uR-ftP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="-9"/>
+            <point key="canvasLocation" x="-226" y="-295"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="E6A-rk-VwF">
+            <objects>
+                <viewController id="sO3-2r-bkH" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bll-8G-czz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ioH-wy-DvM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bE-ul-8EC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48s-Sz-Gbi">
+                                <rect key="frame" x="20" y="164" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIF-ac-RyV">
+                                <rect key="frame" x="20" y="296" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hRS-8C-10V" kind="push" id="JeH-St-sbK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sp-9N-bVa">
+                                <rect key="frame" x="20" y="404" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fmT-FC-NoJ" kind="modal" id="fVD-q0-794"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4xM-sb-LA3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="naz-VZ-W5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="320"/>
+        </scene>
+        <!--Register View Controller - Register-->
+        <scene sceneID="XM8-yy-3z8">
+            <objects>
+                <viewController id="z8c-QZ-GsL" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ssZ-08-OSs"/>
+                        <viewControllerLayoutGuide type="bottom" id="owb-qs-uSf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EbY-T7-iJF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register" id="Jrt-F7-a02">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KAB-oV-oIv">
+                            <connections>
+                                <action selector="hideModal:" destination="z8c-QZ-GsL" id="2ca-mY-FcL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <keyCommands/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2e-2n-rnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1346" y="674"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MH2-zb-y9i">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="fmT-FC-NoJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mGe-8r-UXb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z8c-QZ-GsL" kind="relationship" relationship="rootViewController" id="zFO-lV-POx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qRk-hp-ha6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="760"/>
+        </scene>
+        <!--View Controller - Login-->
+        <scene sceneID="l60-l1-uSb">
+            <objects>
+                <viewController id="hRS-8C-10V" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7dL-5A-PNs"/>
+                        <viewControllerLayoutGuide type="bottom" id="4yO-k6-b3d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JfT-S4-gNk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="gYN-oo-Obu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xke-fV-qeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="19"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JhU-1O-poe">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="eQU-dT-853" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ffX-fi-AVg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sO3-2r-bkH" kind="relationship" relationship="rootViewController" id="uUB-py-G90"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pa2-tz-wEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="388"/>
         </scene>
     </scenes>
     <resources>
