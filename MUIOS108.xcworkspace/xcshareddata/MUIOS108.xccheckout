@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E0A0B626-72F0-4B3A-BD71-B1C89A18A817</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MUIOS108</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>47A9BB2F-0650-4E90-9994-3D5D09ED51F4</key>
+		<string>https://github.com/bitpapaya/MUIOS108.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MUIOS108.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>47A9BB2F-0650-4E90-9994-3D5D09ED51F4</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bitpapaya/MUIOS108.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>47A9BB2F-0650-4E90-9994-3D5D09ED51F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>47A9BB2F-0650-4E90-9994-3D5D09ED51F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MUIOS108</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -10,10 +10,11 @@
 
 @interface RouteCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
+//@property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *price;
 
+@property (weak, nonatomic) IBOutlet UILabel *description;
 
 
 @end

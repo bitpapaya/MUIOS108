@@ -10,17 +10,15 @@
 
 @implementation Route
 
-+ (Route *)createRandomRoute
-{
-    NSString *title = [NSString stringWithFormat:@"%d%@", arc4random() % 99, arc4random() % 2 ? @"K" : @"E"];
 
+- (Route *)routeWithTitle:(NSString *)title price:(NSString *)price description:(NSString *)description {
     Route *route = [[Route alloc] init];
     route.title = title;
-    route.price = @2.50;
-    route.icon = [UIImage imageNamed:@"bus.png"];
-    
+    route.price = price;
+    route.description = description;
+
     return route;
 }
-
-
+    
+    
 @end

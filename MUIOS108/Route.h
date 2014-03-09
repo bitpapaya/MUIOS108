@@ -10,10 +10,13 @@
 
 @interface Route : NSObject
 
-@property(nonatomic, strong) UIImage *icon;
 @property(nonatomic, strong) NSString *title;
-@property(nonatomic, strong) NSNumber *price;
+@property(nonatomic, strong) NSString *price;
+@property(nonatomic, strong) NSString *description;
 
-+ (Route *)createRandomRoute;
+
+- (Route *)routeWithTitle:(NSString *)title
+                    price:(NSString *)price
+                    description:(NSString *)description;
 
 @end

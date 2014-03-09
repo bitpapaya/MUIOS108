@@ -9,11 +9,11 @@
 #import "RouteViewController.h"
 #import "RouteCell.h"
 #import "Route.h"
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import <JASidePanelController.h>
 
 @interface RouteViewController ()
-
-@property NSArray *tableData;
-@property NSDictionary *buses;
 
 @end
 
@@ -22,13 +22,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.routes = [[NSMutableArray alloc] initWithCapacity:30];
-    
-    for (int i=0; i<=30; i++)
-        [self.routes addObject:[Route createRandomRoute]];
-    
-    
+
+//
+
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://marshrutki.com.ua/mu/routes.php" parameters:Nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.routes = (NSArray*)responseObject;
+        [self.tableView reloadData];
+        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@", error);
+        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+        
+    }];
+    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.routes count];
+    return self.routes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,15 +62,17 @@
     
     RouteCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.image.image = [self.routes[indexPath.row] icon];
-    cell.price.text = [NSString stringWithFormat:@"%@грн.", [self.routes[indexPath.row] price]];
-    cell.title.text = [self.routes[indexPath.row] title];
+    cell.price.text = [NSString stringWithFormat:@"%@ грн.", self.routes[indexPath.row][@"route_price"]];
+
+    cell.title.text = self.routes[indexPath.row][@"route_title"];
+    cell.description.text = self.routes[indexPath.row][@"route_description"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     NSLog(@"Selected route: %@", [[self.routes objectAtIndex:indexPath.row] title]);
+     NSLog(@"Selected route: %@", [self.routes objectAtIndex:indexPath.row][@"route_title"]);
+    
 }
 
 @end
