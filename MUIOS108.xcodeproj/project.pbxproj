@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		507DE53318BE717500CA426D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 507DE53218BE717500CA426D /* User.m */; };
 		507DE53618C3B15700CA426D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507DE53518C3B15700CA426D /* RegisterViewController.m */; };
+		5080CE3218CC768B00333C83 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5080CE3118CC768B00333C83 /* 1.png */; };
+		5080CE3518CC79F300333C83 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5080CE3418CC79F300333C83 /* RouteViewController.m */; };
+		5080CE3718CC869800333C83 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5080CE3618CC869800333C83 /* bus.png */; };
+		5080CE3A18CC89F900333C83 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 5080CE3918CC89F900333C83 /* Route.m */; };
+		5080CE3D18CC916F00333C83 /* RouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5080CE3C18CC916F00333C83 /* RouteCell.m */; };
 		5094B88418B7C42D0023B8B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88318B7C42D0023B8B5 /* Foundation.framework */; };
 		5094B88618B7C42D0023B8B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88518B7C42D0023B8B5 /* CoreGraphics.framework */; };
 		5094B88818B7C42D0023B8B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88718B7C42D0023B8B5 /* UIKit.framework */; };
@@ -51,6 +56,14 @@
 		507DE53218BE717500CA426D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		507DE53418C3B15700CA426D /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		507DE53518C3B15700CA426D /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		5080CE3118CC768B00333C83 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = SOURCE_ROOT; };
+		5080CE3318CC79F300333C83 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
+		5080CE3418CC79F300333C83 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
+		5080CE3618CC869800333C83 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = SOURCE_ROOT; };
+		5080CE3818CC89F900333C83 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		5080CE3918CC89F900333C83 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		5080CE3B18CC916F00333C83 /* RouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteCell.h; sourceTree = "<group>"; };
+		5080CE3C18CC916F00333C83 /* RouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteCell.m; sourceTree = "<group>"; };
 		5094B88018B7C42D0023B8B5 /* MUIOS108.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUIOS108.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094B88318B7C42D0023B8B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5094B88518B7C42D0023B8B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +122,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5080CE3E18CC94D100333C83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				507DE53118BE717500CA426D /* User.h */,
+				507DE53218BE717500CA426D /* User.m */,
+				5080CE3818CC89F900333C83 /* Route.h */,
+				5080CE3918CC89F900333C83 /* Route.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5094B87718B7C42D0023B8B5 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +168,7 @@
 		5094B88918B7C42D0023B8B5 /* MUIOS108 */ = {
 			isa = PBXGroup;
 			children = (
+				5080CE3E18CC94D100333C83 /* Model */,
 				5094B89218B7C42D0023B8B5 /* AppDelegate.h */,
 				5094B89318B7C42D0023B8B5 /* AppDelegate.m */,
 				5094B89518B7C42D0023B8B5 /* Images.xcassets */,
@@ -151,10 +176,12 @@
 				5094B8FB18B7CE470023B8B5 /* MainViewController.h */,
 				5094B8FC18B7CE470023B8B5 /* MainViewController.m */,
 				5094B8FE18B7CEB90023B8B5 /* Main.storyboard */,
-				507DE53118BE717500CA426D /* User.h */,
-				507DE53218BE717500CA426D /* User.m */,
 				507DE53418C3B15700CA426D /* RegisterViewController.h */,
 				507DE53518C3B15700CA426D /* RegisterViewController.m */,
+				5080CE3318CC79F300333C83 /* RouteViewController.h */,
+				5080CE3418CC79F300333C83 /* RouteViewController.m */,
+				5080CE3B18CC916F00333C83 /* RouteCell.h */,
+				5080CE3C18CC916F00333C83 /* RouteCell.m */,
 			);
 			path = MUIOS108;
 			sourceTree = "<group>";
@@ -162,6 +189,8 @@
 		5094B88A18B7C42D0023B8B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5080CE3618CC869800333C83 /* bus.png */,
+				5080CE3118CC768B00333C83 /* 1.png */,
 				50ADC54818B8D03C00F09F3C /* icon.png */,
 				50ADC53A18B8CAC500F09F3C /* baaa0.wav */,
 				50ADC53B18B8CAC500F09F3C /* baaa1.wav */,
@@ -276,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5080CE3718CC869800333C83 /* bus.png in Resources */,
 				50ADC54918B8D03C00F09F3C /* icon.png in Resources */,
 				50ADC54718B8CAC500F09F3C /* baaa6.wav in Resources */,
 				50ADC54418B8CAC500F09F3C /* baaa3.wav in Resources */,
@@ -289,6 +319,7 @@
 				5094B88E18B7C42D0023B8B5 /* InfoPlist.strings in Resources */,
 				5094B89618B7C42D0023B8B5 /* Images.xcassets in Resources */,
 				50ADC54618B8CAC500F09F3C /* baaa5.wav in Resources */,
+				5080CE3218CC768B00333C83 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,9 +340,12 @@
 			files = (
 				507DE53618C3B15700CA426D /* RegisterViewController.m in Sources */,
 				507DE53318BE717500CA426D /* User.m in Sources */,
+				5080CE3518CC79F300333C83 /* RouteViewController.m in Sources */,
 				5094B89418B7C42D0023B8B5 /* AppDelegate.m in Sources */,
 				5094B8FD18B7CE470023B8B5 /* MainViewController.m in Sources */,
+				5080CE3D18CC916F00333C83 /* RouteCell.m in Sources */,
 				5094B89018B7C42D0023B8B5 /* main.m in Sources */,
+				5080CE3A18CC89F900333C83 /* Route.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
