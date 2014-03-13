@@ -19,4 +19,6 @@
                     price:(NSString *)price
                     description:(NSString *)description;
 
+- (Route *)initWithDictionary:(NSDictionary *)dict;
+
 @end

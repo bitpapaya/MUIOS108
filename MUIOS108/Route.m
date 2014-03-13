@@ -19,6 +19,15 @@
 
     return route;
 }
+
+- (Route *)initWithDictionary:(NSDictionary *)dict {
+    Route *route = [[Route alloc] init];
+    route.title = dict[@"route_title"];
+    route.price = dict[@"route_price"];
+    route.description = dict[@"route_description"];
+
+    return route;
+}
     
     
 @end

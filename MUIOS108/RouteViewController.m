@@ -9,9 +9,9 @@
 #import "RouteViewController.h"
 #import "RouteCell.h"
 #import "Route.h"
-#import <AFNetworking.h>
 #import <MBProgressHUD.h>
 #import <JASidePanelController.h>
+#import "MUAPI.h"
 
 @interface RouteViewController ()
 
@@ -22,22 +22,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+    [[MUAPI sharedClient] getRouts:^(NSMutableArray *routs, NSError *error) {
+        if(error){
+            NSLog(@"%@", error);
+            return;
+        }
 
-//
-
-    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://marshrutki.com.ua/mu/routes.php" parameters:Nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        self.routes = (NSArray*)responseObject;
+        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+        self.routes = routs;
         [self.tableView reloadData];
-        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@", error);
-        [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-        
     }];
+
     [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
 }
 
@@ -62,17 +58,18 @@
     
     RouteCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.price.text = [NSString stringWithFormat:@"%@ грн.", self.routes[indexPath.row][@"route_price"]];
+    Route* route = (Route*)self.routes[indexPath.row];
+    
 
-    cell.title.text = self.routes[indexPath.row][@"route_title"];
-    cell.description.text = self.routes[indexPath.row][@"route_description"];
+    cell.price.text = [NSString stringWithFormat:@"%@ грн.", route.price];
+    cell.title.text = route.title;
+    cell.description.text = route.description;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     NSLog(@"Selected route: %@", [self.routes objectAtIndex:indexPath.row][@"route_title"]);
-    
+     NSLog(@"Selected route: %@", (Route*)[self.routes objectAtIndex:indexPath.row]);
 }
 
 @end
