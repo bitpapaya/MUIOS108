@@ -27,7 +27,7 @@ static MUAPI* _sharedClient = nil;
     return _sharedClient;
 }
 
--(void)getRouts:(void (^)(NSError *))block {
+-(void)fillRouts:(void (^)(NSError *))block {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -67,9 +67,23 @@ static MUAPI* _sharedClient = nil;
     
     [manager GET:[NSString stringWithFormat:@"%@%@", API_HOST, API_ROUTS_PATH] parameters:Nil success:success failure:fail];
     
-    
-    
+}
 
+
+//не осили оформить этот метод в блок.... 
+- (NSFetchedResultsController*)getRouts{
+    
+    NSFetchedResultsController* resultsController = nil;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Route" inManagedObjectContext:self.context];
+    [fetchRequest setEntity:entity];
+    
+    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"route_title" ascending:YES]]];
+    
+    resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.context sectionNameKeyPath:nil cacheName:@"Routes"];
+
+    
+    return resultsController;
     
 }
 

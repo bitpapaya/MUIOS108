@@ -18,6 +18,8 @@
 
 +(instancetype)sharedClient;
 
--(void)getRouts:(void (^)(NSError *error)) block;
+//-(void)getRouts:(void (^)(NSFetchedResultsController* resultsController, NSError *error)) block;
+- (NSFetchedResultsController*)getRouts;
+-(void)fillRouts:(void (^)(NSError *error)) block;
 
 @end

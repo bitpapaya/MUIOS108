@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface RouteViewController : UITableViewController
+@interface RouteViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) NSMutableArray *routes;
+//@property (nonatomic, strong) NSMutableArray *routes;
 @property (nonatomic, strong) NSFetchedResultsController* resultsController;
-@property (nonatomic, strong) NSManagedObjectContext* context;
+//@property (nonatomic, strong) NSManagedObjectContext* context;
 
 @end

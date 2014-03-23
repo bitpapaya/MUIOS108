@@ -24,6 +24,8 @@
     
     Route* route = [NSEntityDescription insertNewObjectForEntityForName:@"Route" inManagedObjectContext:context];
     route.route_title = dict[@"route_title"];
+    route.route_price = dict[@"route_price"];
+    route.route_description = dict[@"route_description"];
     
     NSError* error;
     [context save:&error];
