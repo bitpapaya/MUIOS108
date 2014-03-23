@@ -70,7 +70,7 @@ static MUAPI* _sharedClient = nil;
 }
 
 
-//не осили оформить этот метод в блок.... 
+//не осилил оформить этот метод в блок....
 - (NSFetchedResultsController*)getRouts{
     
     NSFetchedResultsController* resultsController = nil;

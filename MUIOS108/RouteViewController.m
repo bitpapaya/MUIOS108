@@ -94,6 +94,10 @@
     NSLog(@"Selected route: %@", route.route_title);
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20.f;
+}
+
 #pragma mark - Result delegate
 
 /**
