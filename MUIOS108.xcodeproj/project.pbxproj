@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501B88CB18DE15BB00D68C97 /* Bus.m in Sources */ = {isa = PBXBuildFile; fileRef = 501B88CA18DE15BB00D68C97 /* Bus.m */; };
+		501B88CE18DE15BC00D68C97 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 501B88CD18DE15BC00D68C97 /* Route.m */; };
+		502391DF18DE094F0015B23F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502391DE18DE094F0015B23F /* CoreData.framework */; };
+		502391E218DE11D40015B23F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 502391E018DE11D40015B23F /* Model.xcdatamodeld */; };
 		505602DC18D202D300DD65BD /* MUAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 505602DB18D202D300DD65BD /* MUAPI.m */; };
 		507DE53318BE717500CA426D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 507DE53218BE717500CA426D /* User.m */; };
 		507DE53618C3B15700CA426D /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507DE53518C3B15700CA426D /* RegisterViewController.m */; };
 		5080CE3218CC768B00333C83 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5080CE3118CC768B00333C83 /* 1.png */; };
 		5080CE3518CC79F300333C83 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5080CE3418CC79F300333C83 /* RouteViewController.m */; };
 		5080CE3718CC869800333C83 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5080CE3618CC869800333C83 /* bus.png */; };
-		5080CE3A18CC89F900333C83 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 5080CE3918CC89F900333C83 /* Route.m */; };
+		5080CE3A18CC89F900333C83 /* old_Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 5080CE3918CC89F900333C83 /* old_Route.m */; };
 		5080CE3D18CC916F00333C83 /* RouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5080CE3C18CC916F00333C83 /* RouteCell.m */; };
 		5094B88418B7C42D0023B8B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88318B7C42D0023B8B5 /* Foundation.framework */; };
 		5094B88618B7C42D0023B8B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5094B88518B7C42D0023B8B5 /* CoreGraphics.framework */; };
@@ -56,6 +60,12 @@
 
 /* Begin PBXFileReference section */
 		4A5C8BE6CE14492D9BA421AC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		501B88C918DE15BB00D68C97 /* Bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bus.h; sourceTree = "<group>"; };
+		501B88CA18DE15BB00D68C97 /* Bus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bus.m; sourceTree = "<group>"; };
+		501B88CC18DE15BC00D68C97 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		501B88CD18DE15BC00D68C97 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		502391DE18DE094F0015B23F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		502391E118DE11D40015B23F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		505602DA18D202D300DD65BD /* MUAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUAPI.h; sourceTree = "<group>"; };
 		505602DB18D202D300DD65BD /* MUAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUAPI.m; sourceTree = "<group>"; };
 		505602DD18D2067600DD65BD /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -67,8 +77,8 @@
 		5080CE3318CC79F300333C83 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		5080CE3418CC79F300333C83 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
 		5080CE3618CC869800333C83 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = SOURCE_ROOT; };
-		5080CE3818CC89F900333C83 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
-		5080CE3918CC89F900333C83 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		5080CE3818CC89F900333C83 /* old_Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = old_Route.h; sourceTree = "<group>"; };
+		5080CE3918CC89F900333C83 /* old_Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = old_Route.m; sourceTree = "<group>"; };
 		5080CE3B18CC916F00333C83 /* RouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteCell.h; sourceTree = "<group>"; };
 		5080CE3C18CC916F00333C83 /* RouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteCell.m; sourceTree = "<group>"; };
 		5094B88018B7C42D0023B8B5 /* MUIOS108.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUIOS108.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502391DF18DE094F0015B23F /* CoreData.framework in Frameworks */,
 				50ADC53718B8C2B800F09F3C /* AudioToolbox.framework in Frameworks */,
 				5094B88618B7C42D0023B8B5 /* CoreGraphics.framework in Frameworks */,
 				5094B88818B7C42D0023B8B5 /* UIKit.framework in Frameworks */,
@@ -138,11 +149,16 @@
 			children = (
 				507DE53118BE717500CA426D /* User.h */,
 				507DE53218BE717500CA426D /* User.m */,
-				5080CE3818CC89F900333C83 /* Route.h */,
-				5080CE3918CC89F900333C83 /* Route.m */,
+				5080CE3818CC89F900333C83 /* old_Route.h */,
+				5080CE3918CC89F900333C83 /* old_Route.m */,
 				505602DA18D202D300DD65BD /* MUAPI.h */,
 				505602DB18D202D300DD65BD /* MUAPI.m */,
 				505602DD18D2067600DD65BD /* Config.h */,
+				502391E018DE11D40015B23F /* Model.xcdatamodeld */,
+				501B88CC18DE15BC00D68C97 /* Route.h */,
+				501B88CD18DE15BC00D68C97 /* Route.m */,
+				501B88C918DE15BB00D68C97 /* Bus.h */,
+				501B88CA18DE15BB00D68C97 /* Bus.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -170,6 +186,7 @@
 		5094B88218B7C42D0023B8B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				502391DE18DE094F0015B23F /* CoreData.framework */,
 				50ADC53618B8C2B800F09F3C /* AudioToolbox.framework */,
 				50ADC53418B8C24900F09F3C /* AVFoundation.framework */,
 				5094B88318B7C42D0023B8B5 /* Foundation.framework */,
@@ -397,10 +414,13 @@
 				5080CE3518CC79F300333C83 /* RouteViewController.m in Sources */,
 				505602DC18D202D300DD65BD /* MUAPI.m in Sources */,
 				5094B89418B7C42D0023B8B5 /* AppDelegate.m in Sources */,
+				501B88CB18DE15BB00D68C97 /* Bus.m in Sources */,
+				501B88CE18DE15BC00D68C97 /* Route.m in Sources */,
 				5094B8FD18B7CE470023B8B5 /* MainViewController.m in Sources */,
 				5080CE3D18CC916F00333C83 /* RouteCell.m in Sources */,
 				5094B89018B7C42D0023B8B5 /* main.m in Sources */,
-				5080CE3A18CC89F900333C83 /* Route.m in Sources */,
+				502391E218DE11D40015B23F /* Model.xcdatamodeld in Sources */,
+				5080CE3A18CC89F900333C83 /* old_Route.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +637,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		502391E018DE11D40015B23F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				502391E118DE11D40015B23F /* Model.xcdatamodel */,
+			);
+			currentVersion = 502391E118DE11D40015B23F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5094B87818B7C42D0023B8B5 /* Project object */;
 }

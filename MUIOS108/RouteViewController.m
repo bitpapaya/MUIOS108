@@ -8,7 +8,7 @@
 
 #import "RouteViewController.h"
 #import "RouteCell.h"
-#import "Route.h"
+//#import "Route.h"
 #import <MBProgressHUD.h>
 #import <JASidePanelController.h>
 #import "MUAPI.h"
@@ -23,14 +23,14 @@
 {
     [super viewDidLoad];
    
-    [[MUAPI sharedClient] getRouts:^(NSMutableArray *routs, NSError *error) {
+    [[MUAPI sharedClient] getRouts:^(NSError *error) {
         if(error){
             NSLog(@"%@", error);
             return;
         }
 
         [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
-        self.routes = routs;
+//        self.routes = routs;
         [self.tableView reloadData];
     }];
 
@@ -58,18 +58,18 @@
     
     RouteCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Route* route = (Route*)self.routes[indexPath.row];
-    
-
-    cell.price.text = [NSString stringWithFormat:@"%@ грн.", route.price];
-    cell.title.text = route.title;
-    cell.description.text = route.description;
+//    Route* route = (Route*)self.routes[indexPath.row];
+//    
+//
+//    cell.price.text = [NSString stringWithFormat:@"%@ грн.", route.price];
+//    cell.title.text = route.title;
+//    cell.description.text = route.description;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     NSLog(@"Selected route: %@", (Route*)[self.routes objectAtIndex:indexPath.row]);
+//     NSLog(@"Selected route: %@", (Route*)[self.routes objectAtIndex:indexPath.row]);
 }
 
 @end

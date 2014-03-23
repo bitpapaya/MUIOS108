@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 #import "Config.h"
 #import "Route.h"
+#import "Bus.h"
 
 
 @implementation MUAPI
@@ -26,28 +27,50 @@ static MUAPI* _sharedClient = nil;
     return _sharedClient;
 }
 
--(void)getRouts:(void (^)(NSMutableArray *, NSError *))block {
+-(void)getRouts:(void (^)(NSError *))block {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     void(^success)(AFHTTPRequestOperation*, id) = ^(AFHTTPRequestOperation *operation, id responce){
-        NSMutableArray *returnData = [[NSMutableArray alloc] init];
+
+        self.model = [NSManagedObjectModel mergedModelFromBundles:nil];
+        self.coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
         
-        for(NSDictionary* dict in responce){
-            Route *route = [[Route alloc] initWithDictionary:dict];
-            
-            [returnData addObject:route];
+        NSString* homeDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    
+        
+        NSString* filePath = [homeDirectory stringByAppendingPathComponent:@"MU108.sqlite"];
+        NSURL* storeURL = [NSURL fileURLWithPath:filePath];
+        
+        NSError* error;
+        [self.coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
+        
+        if (error){
+            NSLog(@"%@", error);
         }
         
-        block(returnData, nil);
+        self.context = [[NSManagedObjectContext alloc] init];
+        self.context.persistentStoreCoordinator = self.coordinator;
+        
+        
+        for(NSDictionary* dict in responce){
+            [[Route alloc] initWithDictionary:dict context:self.context];
+        }
+        
+        block(error);
     };
     
     void(^fail)(AFHTTPRequestOperation*, NSError*) = ^(AFHTTPRequestOperation *operation, NSError *error){
-        NSLog(@"%@", error);
-        block(nil, error);
+
+        block(error);
     };
     
     [manager GET:[NSString stringWithFormat:@"%@%@", API_HOST, API_ROUTS_PATH] parameters:Nil success:success failure:fail];
+    
+    
+    
+
+    
 }
 
 @end

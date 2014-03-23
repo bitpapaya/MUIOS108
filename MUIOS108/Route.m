@@ -2,32 +2,53 @@
 //  Route.m
 //  MUIOS108
 //
-//  Created by Max Krylov on 3/9/14.
+//  Created by Max Krylov on 3/22/14.
 //  Copyright (c) 2014 Max Krylov. All rights reserved.
 //
 
 #import "Route.h"
+#import "Bus.h"
+
 
 @implementation Route
 
+@dynamic route_description;
+@dynamic route_price;
+@dynamic route_title;
+@dynamic buses;
 
-- (Route *)routeWithTitle:(NSString *)title price:(NSString *)price description:(NSString *)description {
-    Route *route = [[Route alloc] init];
-    route.title = title;
-    route.price = price;
-    route.description = description;
-
-    return route;
+- (BOOL)initWithDictionary:(NSDictionary *)dict context:(NSManagedObjectContext*)context{
+    
+    if(dict.count <=0)
+        return NO;
+    
+    Route* route = [NSEntityDescription insertNewObjectForEntityForName:@"Route" inManagedObjectContext:context];
+    route.route_title = dict[@"route_title"];
+    
+    NSError* error;
+    [context save:&error];
+    
+    if(error){
+        NSLog(@"%@", error);
+        return NO;
+    }
+    
+    return YES;
 }
 
-- (Route *)initWithDictionary:(NSDictionary *)dict {
-    Route *route = [[Route alloc] init];
-    route.title = dict[@"route_title"];
-    route.price = dict[@"route_price"];
-    route.description = dict[@"route_description"];
+//- (Route *)initWithDictionary:(NSDictionary *)dict {
+//    
+//    
+//    self = [super init];
+//    
+//    if(self){
+//        self.route_title = dict[@"route_title"];
+//        self.route_price = dict[@"route_price"];
+//        self.route_description = dict[@"route_description"];
+//    }
+//    
+//
+//    return self;
+//}
 
-    return route;
-}
-    
-    
 @end

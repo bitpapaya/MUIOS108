@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface MUAPI : NSObject
 
+
+@property (strong, nonatomic) NSManagedObjectContext* context;
+@property (strong, nonatomic) NSPersistentStoreCoordinator* coordinator;
+@property (strong, nonatomic) NSManagedObjectModel* model;
+
 +(instancetype)sharedClient;
 
--(void)getRouts:(void (^)(NSMutableArray *routs, NSError *error)) block;
+-(void)getRouts:(void (^)(NSError *error)) block;
 
 @end
